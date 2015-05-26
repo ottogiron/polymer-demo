@@ -633,7 +633,8 @@ core-header-panel {
    .content {
       height: 2000px;
       background: linear-gradient(rgb(214, 227, 231), lightblue);
-      text-align: center;
+      width: 70%;
+      margin: 50px auto;
     }
 
   .core-header {
