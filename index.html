@@ -7,12 +7,18 @@
 </head>
 <body>
 <googleio-books-api query="harry potter"></googleio-books-api>
+<div id="content"></div>
 <script>
 
    var googleIOBooksAPI = document.querySelector('googleio-books-api');
    googleIOBooksAPI.addEventListener('books-loaded', function(e){
-   	  console.log('books have been loaded');
-   	  console.log('Books are........', e.detail.response)
+   	  var response = e.detail.response;
+   	  document.getElementById("content").innerHTML = '';
+   	  for (var i = 0; i < response.items.length; i++) {
+        var item = response.items[i];
+        // in production code, item.text should have the HTML entities escaped.
+        document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title;
+      }
    });
 
    
