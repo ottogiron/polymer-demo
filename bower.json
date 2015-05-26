@@ -1,0 +1,14 @@
+{
+  "name": "Polymer Demo",
+  "version": "0.1.0",
+  "authors": [
+    "Otto Giron <ottog2486@gmail.com>"
+  ],
+  "description": "Polymer Google IO Extended GC Demo",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5",
+    "core-elements": "Polymer/core-elements#^0.5",
+    "paper-elements": "Polymer/paper-elements#^0.5"
+  }
+}
