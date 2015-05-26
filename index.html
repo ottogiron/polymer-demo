@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="bower_components/webcomponentsjs/webcomponents.js"></script>
+	<title>Web Components Revolution</title>
+<link rel="import"  href="googleio-books-api.html">
+</head>
+<body>
+<googleio-books-api query="harry potter"></googleio-books-api>
+<script>
+
+   var googleIOBooksAPI = document.querySelector('googleio-books-api');
+   googleIOBooksAPI.addEventListener('books-loaded', function(e){
+   	  console.log('books have been loaded');
+   	  console.log('Books are........', e.detail.response)
+   });
+
+   
+</script>
+</body>
+</html>
