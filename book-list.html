@@ -1,0 +1,39 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="googleio-books-service.html">
+<link rel="import" href="book-card.html">
+
+<polymer-element name="book-list">
+  <template>
+  	<style>
+	    :host {
+	      display: block;
+	      width: 100%;
+	    }
+	    book-card {
+	      margin-bottom: 30px;
+	    }
+  	</style>
+
+  	<googleio-books-service query="Harry Potter" books="{{books}}">
+    </googleio-books-service>
+  	
+  	<div layout vertical center>
+	  <template repeat="{{book in books}}">
+	    <book-card>
+	      <img src="images/book.png" width="70" height="70">
+	      <h2>{{book.volumeInfo.title}}</h2>
+	      <p>{{book.volumeInfo.description}}</p>
+	    </book-card>
+	  </template>
+	</div>    
+  </template>
+  <script>
+  	Polymer({});
+  </script>
+</polymer-element>
+
+
+ 
+
+
+    
