@@ -29,8 +29,11 @@
   	<paper-input label="Buscar" value="{{searchTerms}}" on-keypress="{{handleKeyPressed}}"></paper-input>
 	  <template repeat="{{book in books}}">
 	    <book-card>
-	      <img src="images/book.png" width="70" height="70">
+	      <img src="{{book.volumeInfo.imageLinks.thumbnail}}" width="70" height="70">
 	      <h2>{{book.volumeInfo.title}}</h2>
+	      <ul>
+	      	<template  repeat="{{author in book.volumeInfo.authors}}"><li>{{author}}</li></template>
+	      </ul>
 	      <p>{{book.volumeInfo.description}}</p>
 	    </book-card>
 	  </template>
