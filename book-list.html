@@ -1,6 +1,9 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="googleio-books-service.html">
+<link rel="import" href="bower_components/paper-input/paper-input.html">
+
 <link rel="import" href="book-card.html">
+
 
 <polymer-element name="book-list">
   <template>
@@ -12,12 +15,18 @@
 	    book-card {
 	      margin-bottom: 30px;
 	    }
+
+	    paper-input {
+	    	width: 50%;
+	    	margin-top: 10px;
+	    }
   	</style>
 
-  	<googleio-books-service query="Harry Potter" books="{{books}}">
+  	<googleio-books-service query="{{query}}" books="{{books}}">
     </googleio-books-service>
   	
   	<div layout vertical center>
+  	<paper-input label="Buscar" value="{{searchTerms}}" on-keypress="{{handleKeyPressed}}"></paper-input>
 	  <template repeat="{{book in books}}">
 	    <book-card>
 	      <img src="images/book.png" width="70" height="70">
@@ -28,7 +37,13 @@
 	</div>    
   </template>
   <script>
-  	Polymer({});
+  	Polymer('book-list',{
+  		handleKeyPressed: function(e){
+  			if(e.keyCode === 13) {
+  				this.query = this.searchTerms;	  				
+  			}  			
+  		}
+  	});
   </script>
 </polymer-element>
 
