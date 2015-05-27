@@ -43,7 +43,7 @@
 
 <body unresolved>
 
-<googleio-books-api query="harry potter"></googleio-books-api>
+<googleio-books-service query="harry potter"></googleio-books-service>
 
 <core-header-panel>
     <div class="core-header">Google IO Extended Books Search</div>
@@ -51,7 +51,7 @@
   </core-header-panel>
 <script>
 
-   var googleIOBooksAPI = document.querySelector('googleio-books-api');
+   var googleIOBooksAPI = document.querySelector('googleio-books-service');
    googleIOBooksAPI.addEventListener('books-loaded', function(e){
    	  var response = e.detail.response;
    	  document.getElementById("content").innerHTML = '';

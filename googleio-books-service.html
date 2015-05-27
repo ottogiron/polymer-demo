@@ -1,7 +1,7 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 <link rel="import" href="bower_components/core-ajax/core-ajax.html">
 
-<polymer-element name="googleio-books-api" hidden attributes="query">
+<polymer-element name="googleio-books-service" hidden attributes="query">
 	<template>
 		<core-ajax
 		    auto
@@ -10,7 +10,7 @@
 		    on-core-response="{{handleResponse}}"></core-ajax>
 	</template>
 	<script>
-	Polymer('googleio-books-api', {
+	Polymer('googleio-books-service', {
 		requestUrl: null,
 		apiUrl: 'https://www.googleapis.com/books/v1/volumes',
 		queryChanged: function(oldValue, newValue){
